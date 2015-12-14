@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="1"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.jetnixx.volleydependency.Pages.ProfileActivity"
+    tools:showIn="@layout/activity_profile">
+
+    <ImageView
+        android:id="@+id/image_view_cover_image"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginTop="0dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/images" />
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cv"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="-100dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/image_view_profile_image"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:scaleType="fitXY"
+            android:src="@drawable/index" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="200dp"
+            android:text="Sumit Singh"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#fbf8f8"></TextView>
+
+    </RelativeLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|right"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="-10dp"
+        android:src="@android:drawable/ic_menu_edit"
+        android:tint="@color/colorAccent"
+        app:backgroundTint="#fcfafa" />
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/image_view_cover_image"
+        android:layout_marginTop="-30dp"
+        app:cardElevation="5dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#e133d0"
+            android:padding="10dp">
+
+            <include
+                android:id="@+id/email_address_icon"
+                layout="@layout/custom_text_view_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"></include>
+
+            <TextView
+                android:id="@+id/text_view_email_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="5dp"
+                android:layout_toEndOf="@+id/email_address_icon"
+                android:layout_toRightOf="@+id/email_address_icon"
+                android:text="summmmit44@gmail.com"
+                android:textColor="#fbfaf9" />
+
+            <include
+                android:id="@+id/include"
+                layout="@layout/custom_text_view_mobile_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/email_address_icon"
+                android:layout_alignStart="@+id/email_address_icon"
+                android:layout_below="@+id/text_view_email_address"></include>
+
+            <TextView
+                android:id="@+id/text_view_mobile_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/text_view_email_address"
+                android:layout_alignStart="@+id/text_view_email_address"
+                android:layout_alignTop="@+id/include"
+                android:text="+91-8765374719"
+                android:textColor="#fbfaf9" />
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <com.example.jetnixx.secret.originalClass.SlidingTabLayout
+        android:id="@+id/profile_tabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fcf9f9"
+        android:elevation="7dp" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/view_pager_profile"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+    </android.support.v4.view.ViewPager>
+
+</LinearLayout>
